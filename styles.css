@@ -1,1 +1,26 @@
-    
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+.blue {
+    background-color: #1276ff;
+    color: #fff;
+}
+
+.grey {
+    background-color: #d1d2d3;
+}
+
+.sidebar {
+    grid-row: 1 / 3;
+} 
