@@ -5,9 +5,12 @@
 
 }
 
+body, .projects > .cards{
+    display: grid;
+}
+
 body {
     height: 100vh;
-    display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
     font-family: "Roboto", sans-serif;
@@ -16,11 +19,14 @@ body {
 .sidebar, .dashboard-icon, ul, .nav-link a,
 .header, .header > .top, .search, .right-side, 
 .header > .bottom, .header > .bottom > .left-side
-,.header > .bottom > .right-side{
+,.header > .bottom > .right-side, .main-content, .projects .card,
+.icons, .other, .long-card, .creator {
     display: flex;
 }
 
-.header, .sidebar, ul {
+.header, .sidebar, ul,
+.projects .card, .other,
+.long-card {
     flex-direction: column;
 }
 
@@ -75,7 +81,8 @@ ul {
     color: #f1f2f3;
 }
 
-.nav-link img, .search img, .notifications img {  
+.nav-link img, .search img, .notifications img,
+.icon-wrapper img {  
     width: 1.5rem;
 }
 
@@ -83,6 +90,10 @@ ul {
     margin-top: 2.8rem;
 }
 
+
+.welcome-msg, .profile-name.medium, .heading {
+    font-weight: 500;
+}
 
 /* Header styling */
 .header {
@@ -115,6 +126,10 @@ ul {
     border-radius: 6.25rem;
 }
 
+.profile-name.medium {
+    font-size: 1.2rem;
+}
+
 .header > .bottom > .left-side {
     gap: 1rem;
 }
@@ -124,7 +139,6 @@ ul {
 }
 
 .header > .bottom button {
-    /* padding: .5rem 1.2rem; */
     width: 6.25rem;
     height: 2.3rem;
     border: none;
@@ -140,11 +154,92 @@ ul {
     border-radius: 6.25rem;
 }
 
-.welcome-msg {
-    font-weight: 500;
-}
-
 .profile-name.large {
     font-size: 1.6rem;
 }
 
+/* Main content styles */
+
+.main-content {
+    padding: 2rem 0rem 2rem 2rem;
+    gap: 1.4rem;
+}
+
+.projects {
+    width: 70%;
+}
+
+.heading {
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+}
+
+.projects > .cards {    
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card, .long-card {
+    background-color: white;
+    border-radius: .5rem;
+}
+
+.card {
+    position: relative;
+    border-left: .5rem solid orange;
+}
+
+.card .text {
+    padding: 1.5rem;
+}
+
+.card .text > p, .announcement p,
+.profile {
+    color: #8c8c8c;
+}
+
+.card .text > p {
+    width: 80%;
+    font-size: 1rem; 
+}
+
+.icons {
+    position: absolute;
+    bottom: .2rem;
+    right: .9rem;
+    gap: 1.2rem;
+}
+
+.long-card {
+    padding: 2rem;
+    height: 18.75rem;
+}
+
+.other {
+    width: 30%;
+    gap: 2.7rem;
+    padding-right: 1.2rem;  
+}
+
+
+.announcement p {
+    font-size: .8rem;    
+}
+
+.announcement {
+    border-bottom: 1px solid #8c8c8c;
+    padding: .5rem;
+}
+
+.announcement:last-of-type {
+    border: none;
+}
+
+.creator {
+    gap: 1.2rem;
+}
+
+.long-card.second {
+    gap: 1rem;
+}
